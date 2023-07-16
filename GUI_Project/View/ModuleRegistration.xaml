@@ -1,0 +1,134 @@
+﻿<Window x:Class="GUI_Project.View.ModuleRegistration"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:vm="clr-namespace:GUI_Project.ViewModel"
+             xmlns:local="clr-namespace:GUI_Project.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="1100">
+    <Window.DataContext>
+        <vm:ModuleRegistrationVM/>
+    </Window.DataContext>
+    <Grid >
+        <Image Source="C:\Users\amara\source\repos\GUI_Project\GUI_Project\Asests\Images\5625651.jpg" Stretch="UniformToFill"/>
+        <StackPanel>
+            <TextBlock
+                Text="Add Module"
+                Foreground="Black"
+                Margin="20"
+                FontWeight="Bold"
+                FontFamily="Montserrat"
+                FontSize="50"
+                HorizontalAlignment="Center"
+                >
+            </TextBlock>
+            <StackPanel Margin="40 40 40 40" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Module Code"
+                           Foreground="Black"
+                           FontSize="30"
+                            FontFamily="Montserrat"
+                           FontWeight="DemiBold"
+                           VerticalAlignment="Center"
+                           Grid.Column="0" Margin="0,0,189,0"/>
+
+                    <TextBox 
+                       x:Name="GetModuleCode"
+                       FontSize="30"
+                        FontFamily="Montserrat"
+                        Background="White"
+                        Width="490"
+                        
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Padding="10" Grid.ColumnSpan="2" Margin="436,0,0,0"  
+                        Text="{Binding ModuleCode}"
+                        >
+
+                    </TextBox>
+
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="Module Name"
+                               Foreground="Black"
+                               FontSize="30"
+                               FontWeight="DemiBold"
+                               FontFamily="Montserrat"
+                               VerticalAlignment="Center"
+                               Grid.Column="0"
+                               />
+
+                    <TextBox 
+                      
+                       FontSize="30"
+                        Margin="10"
+                        FontFamily="Montserrat"
+                        Background="White"
+                        Width="490"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Padding="10"
+                        Grid.Column="1"  
+                        Text="{Binding ModuleName}"
+                        >
+
+
+                    </TextBox>
+
+
+                </Grid>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="Module Coordinator"
+                               Foreground="Black"
+                               FontSize="30"
+                               FontFamily="Montserrat"
+                               FontWeight="DemiBold"
+                               VerticalAlignment="Center"
+                               Grid.Column="0"
+                               />
+
+                    <TextBox 
+                       
+                       FontSize="30"
+                        Margin="10"
+                        FontFamily="Montserrat"
+                        Background="White"
+                        Width="490"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Padding="10"
+                        Grid.Column="1"  
+                        Text="{Binding ModuleCoordinator}"
+                        >
+
+
+                    </TextBox>
+
+
+                </Grid>
+
+            </StackPanel>
+            <Button  Margin="0,20,0,0" x:Name="AddModuleBtn" Style="{StaticResource MaterialDesignFlatMidBgButton}" materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="53" Width="300" materialDesign:ButtonAssist.CornerRadius="10" FontSize="25" 
+                         Content="Add Module" Command="{Binding InsertModuleCommand}"></Button>
+        </StackPanel>
+
+    </Grid>
+
+</Window>
